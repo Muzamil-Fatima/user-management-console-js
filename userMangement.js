@@ -17,6 +17,7 @@ addUser("zara");
 console.log(users);
 
 // updateUser
+
 function updateUser(id, newName) {
   let found = false;
   users.forEach((fetchUser) => {
@@ -34,6 +35,12 @@ console.log(users);
 
 // listUsers
 
-function listUsers(){
-  
+console.log("This is users List: ");
+
+function listUsers() {
+  users.forEach((user) => {
+    console.log(`ID: ${user.id} | Name: ${user.name}`)
+  });
 }
+listUsers();
+
