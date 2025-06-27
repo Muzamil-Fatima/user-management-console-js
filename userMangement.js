@@ -39,8 +39,48 @@ console.log("This is users List: ");
 
 function listUsers() {
   users.forEach((user) => {
-    console.log(`ID: ${user.id} | Name: ${user.name}`)
+    console.log(`ID: ${user.id} | Name: ${user.name}`);
   });
 }
 listUsers();
 
+// Delete User
+//  Delete User with Splice method
+function deleteUser(id) {
+  let found = false;
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].id === id) {
+      users.splice(i, 1);
+      found = true;
+      break;
+    }
+  }
+  if (!found) {
+    console.log("User not found ")
+  }
+  else{
+    console.log(`The user ${id} will be delete successfully in array object.`)
+  }
+}
+
+deleteUser(1);
+console.log(users);
+
+//  Delete User with filter method
+function deleteUsers(){
+  const indexBox = users.length;
+  const updateUser = users.filter((user)=> user.id !==id);
+
+  if(updateUser.length === indexBox){
+    console.log("User will not be found!")
+  }
+  else{
+    console.log(`User with ID ${id} has been deleted successfully`)
+  }
+
+  users.length = 0;
+  users.push(...updateUser)
+}
+
+deleteUser(2)
+console.log(users)
